@@ -1,0 +1,45 @@
+{
+  "name": "color",
+  "version": "1.0.0",
+  "description": "颜色扩展插件",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rimraf -rf es cjs umd",
+    "build": "pnpm clear && pnpm build:es && pnpm build:umd",
+    "build:umd": "rollup --config build/rollup.config.umd.js",
+    "build:es": "rollup --config build/rollup.config.js",
+    "test": "mocha -r ts-node/register test/*.ts",
+    "lint": "eslint --ext js,ts src test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nie-ny/Color.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nie-ny/Color/issues"
+  },
+  "homepage": "https://github.com/nie-ny/Color#readme",
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-import": "^2.27.5",
+    "glob": "^9.3.4",
+    "mocha": "^10.2.0",
+    "rimraf": "^4.4.1",
+    "rollup": "^3.20.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
