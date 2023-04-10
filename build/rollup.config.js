@@ -28,7 +28,7 @@ const arrConfig = Object.keys(entry).map((key) => {
         format: 'cjs'
       }
     ],
-    plugins: [typescript({ compilerOptions: { module: 'CommonJS' } }), babel()]
+    plugins: [typescript({ compilerOptions: { module: 'esnext' } }), babel()]
   };
 });
 
