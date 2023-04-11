@@ -25,7 +25,7 @@ module.exports = {
         vars: 'all',
         args: 'after-used',
         ignoreRestSiblings: true,
-        argsIgnorePattern: '^_' // ignore unused variables whose name is '_'
+        argsIgnorePattern: '^_' //
       }
     ]
   }
