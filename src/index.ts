@@ -1,4 +1,3 @@
-import add from './add';
-import del from './del';
+import isHex from './isHex';
 
-export default { add, del };
+export default { isHex };
