@@ -14,6 +14,12 @@
     "strict": true /* 启用所有严格类型检查选项。   */,
     "skipLibCheck": true /* 忽略所有的声明文件（ *.d.ts）的类型检查 */
   },
+  // 使用 ts-node
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   // 排除 exclude只对include有效
   "exclude": ["node_modules"],
   // 引入
