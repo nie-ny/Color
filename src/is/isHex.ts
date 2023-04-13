@@ -1,6 +1,6 @@
 /**
- * 是否是 Hex 格式的颜色
- * @param color 十六进制颜色
+ * 是否为 Hex 格式的颜色
+ * @param color Hex格式 #000000
  * @returns
  */
 export default function isHex(color: string): boolean {
