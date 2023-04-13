@@ -4,7 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 // 自动获取 package.json 中的引用库
 import externals from 'rollup-plugin-node-externals';
 // 支持基于 CommonJS 模块方式 npm 包 编译
-import commonjs from '@rollup/plugin-commonjs';
+// import commonjs from '@rollup/plugin-commonjs';
 // 编译 ts文件
 import typescript from '@rollup/plugin-typescript';
 // 代码中删除 debugger 语句和函数。包括 assert.equal、console.log 等
@@ -27,7 +27,7 @@ export default {
   },
   plugins: [
     resolve(),
-    commonjs(),
+    // commonjs(),
     externals({
       devDeps: false // devDependencies 类型的依赖就不用加到 externals 了。
     }),
