@@ -1,5 +1,6 @@
 import assert from 'assert';
 import isHex from '../src/is/isHex';
+import isHexa from '../src/is/isHexa';
 import isRgb from '../src/is/isRgb';
 import isRgba from '../src/is/isRgba';
 import isHsl from '../src/is/isHsl';
@@ -28,6 +29,31 @@ describe('isHex', function () {
   });
   it(`isHex('rgb(0,0,0)')`, () => {
     assert.strictEqual(isHex('rgb(0,0,0)'), false);
+  });
+});
+
+describe('isHexa', function () {
+  it(`isHexa('#0000')`, () => {
+    assert.strictEqual(isHexa('#0000'), true);
+  });
+  it(`isHexa('#000fffff')`, () => {
+    assert.strictEqual(isHexa('#000fffff'), true);
+  });
+  it(`isHexa('')`, function () {
+    assert.strictEqual(isHexa(''), false);
+  });
+  it(`isHexa('no')`, function () {
+    assert.strictEqual(isHexa('no'), false);
+  });
+  it(`isHexa('#000a33')`, () => {
+    assert.strictEqual(isHexa('#000a33'), false);
+  });
+
+  it(`isHexa('#000fffhh')`, () => {
+    assert.strictEqual(isHexa('#000fffhh'), false);
+  });
+  it(`isHexa('rgb(0,0,0)')`, () => {
+    assert.strictEqual(isHexa('rgb(0,0,0)'), false);
   });
 });
 

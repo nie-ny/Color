@@ -1,4 +1,5 @@
 import isHex from './isHex';
+import isHexa from './isHexa';
 import isRgb from './isRgb';
 import isRgba from './isRgba';
 import isHsl from './isHsl';
@@ -12,6 +13,7 @@ import getColorByKeyword from '../get/getColorByKeyword';
  */
 export default function isColor(color: string): boolean {
   if (isHex(color)) return true;
+  if (isHexa(color)) return true;
   if (isRgb(color)) return true;
   if (isRgba(color)) return true;
   if (isHsl(color)) return true;
