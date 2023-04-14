@@ -6,5 +6,16 @@ import isHsl from './is/isHsl';
 import isHsla from './is/isHsla';
 import isColor from './is/isColor';
 import getColorByKeyword from './get/getColorByKeyword';
+import toRGBObject from './to/toRGBObject';
 
-export default { isHex, isHexa, isRgb, isRgba, isHsl, isHsla, isColor, getColorByKeyword };
+export default {
+  isHex,
+  isHexa,
+  isRgb,
+  isRgba,
+  isHsl,
+  isHsla,
+  isColor,
+  getColorByKeyword,
+  toRGBObject
+};
