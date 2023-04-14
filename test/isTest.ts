@@ -64,8 +64,20 @@ describe('isRgb', function () {
   it(`isRgb('RGB( 255, 255 , 255)')`, function () {
     assert.strictEqual(isRgb('RGB( 255, 255 , 255)'), true);
   });
+  it(`isRgb('RGB( 255 255  255)')`, function () {
+    assert.strictEqual(isRgb('RGB( 255 255  255)'), true);
+  });
+  it(`isRgb('RGB( 2%, 4%, 5%)')`, function () {
+    assert.strictEqual(isRgb('RGB( 2%, 4%, 5%)'), true);
+  });
   it(`isRgb('')`, function () {
     assert.strictEqual(isRgb(''), false);
+  });
+  it(`isRgb('RGB( 255255  255)')`, function () {
+    assert.strictEqual(isRgb('RGB( 255255  255)'), false);
+  });
+  it(`isRgb('RGB( 255% 255% 255%)')`, function () {
+    assert.strictEqual(isRgb('RGB( 255% 255% 255%)'), false);
   });
   it(`isRgb('RGB( 275, 255 , 255)')`, function () {
     assert.strictEqual(isRgb('RGB( 275, 255 , 255)'), false);
@@ -85,8 +97,11 @@ describe('isRgba', function () {
   it(`isRgba('rgba(0,0,0,1)')`, function () {
     assert.strictEqual(isRgba('rgba(0,0,0,1)'), true);
   });
-  it(`isRgba('RGBA( 255, 255 , 255)')`, function () {
+  it(`isRgba('RGBA( 255, 255 , 255, 0.1)')`, function () {
     assert.strictEqual(isRgba('RGBA( 255, 255 , 255, 0.1)'), true);
+  });
+  it(`isRgba('RGBA( 100 100 100 / 0.1)')`, function () {
+    assert.strictEqual(isRgba('RGBA( 100 100 100 / 0.1)'), true);
   });
 
   it(`isRgba('RGBA( 255, 255 , 255)')`, function () {
@@ -109,6 +124,9 @@ describe('isHsl', function () {
   });
   it(`isHsl('hsl(1,2%,3%)')`, function () {
     assert.strictEqual(isHsl('hsl(1,2%,3%)'), true);
+  });
+  it(`isHsl('hsl(1 2% 3%)')`, function () {
+    assert.strictEqual(isHsl('hsl(1 2% 3%)'), true);
   });
   it(`isHsl('hsl(1 , 2%, 3% )')`, function () {
     assert.strictEqual(isHsl('hsl(1 , 2%, 3% )'), true);
@@ -136,6 +154,9 @@ describe('isHsla', function () {
   });
   it(`isHsla('hsla(1 , 2%, 3% ,0.1)')`, function () {
     assert.strictEqual(isHsla('hsla(1 , 2%, 3% ,0.1)'), true);
+  });
+  it(`isHsla('hsla(1 2% 3% / 0.1)')`, function () {
+    assert.strictEqual(isHsla('hsla(1 2% 3% / 0.1)'), true);
   });
   it(`isHsla('hsla(400,2%,3%)')`, function () {
     assert.strictEqual(isHsla('hsla(400,2%,3%,0.1)'), false);
