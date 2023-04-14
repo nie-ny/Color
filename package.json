@@ -1,5 +1,5 @@
 {
-  "name": "color",
+  "name": "@nie-ny/color",
   "version": "0.0.1",
   "description": "颜色扩展插件",
   "main": "cjs/index.js",
