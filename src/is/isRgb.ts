@@ -1,6 +1,6 @@
 /**
  * 是否为 RGB 格式的颜色
- * @param color rgb格式 rgb(0,0,0) rgb(1 1 1)
+ * @param color rgb格式 rgb(0,0,0)|rgb(100%, 50%, 99%)|rgb(1 1 1)
  * @returns
  */
 export default function isRgb(color: string): boolean {

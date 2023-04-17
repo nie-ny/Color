@@ -1,6 +1,6 @@
 /**
  * 是否为 Hsla 格式的颜色
- * @param color Hsla格式 hsl(0,10%,10%,0.1) hsla(100 100% 100% / 0.5)
+ * @param color Hsla格式 hsl(0,10%,10%,0.1)|hsla(100 100% 100% / 0.5)
  * @returns
  */
 export default function isHsla(color: string): boolean {

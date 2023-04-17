@@ -6,6 +6,7 @@ import isRgba from '../src/is/isRgba';
 import isHsl from '../src/is/isHsl';
 import isHsla from '../src/is/isHsla';
 import isColor from '../src/is/isColor';
+import isValidator from '../src/is/isValidator';
 
 describe('isHex', function () {
   it(`isHex('#000')`, () => {
@@ -196,5 +197,26 @@ describe('isColor', function () {
   });
   it(`isColor('wwwww')`, () => {
     assert.strictEqual(isColor('wwwww'), false);
+  });
+});
+
+describe('isValidator', function () {
+  it(`isValidator('#000')`, () => {
+    assert.strictEqual(isValidator('#000'), 'hex');
+  });
+  it(`isValidator('rgb(0,0,0)')`, () => {
+    assert.strictEqual(isValidator('rgb(0,0,0)'), 'rgb');
+  });
+  it(`isValidator('rgba(0,0,0,1)')`, () => {
+    assert.strictEqual(isValidator('rgba(0,0,0,1)'), 'rgba');
+  });
+  it(`isValidator('HSL(0,0%,0%)')`, () => {
+    assert.strictEqual(isValidator('HSL(0,0%,0%)'), 'hsl');
+  });
+  it(`isValidator('HSLa(0,0%,0%)')`, () => {
+    assert.strictEqual(isValidator('HSLa(0,0%,0%,0.1)'), 'hsla');
+  });
+  it(`isValidator('red')`, () => {
+    assert.strictEqual(isValidator('red'), '#ff0000');
   });
 });

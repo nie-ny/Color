@@ -1,6 +1,6 @@
 /**
  * 是否为 RGBA 格式的颜色
- * @param color rgba格式 rgba(0,0,0,1) rgba(100 100 100 / 0.5)
+ * @param color rgba格式 rgba(0,0,0,1)|rgba(100 100 100 / 0.5)
  * @returns
  */
 export default function isRgba(color: string): boolean {
