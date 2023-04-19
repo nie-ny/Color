@@ -10,11 +10,11 @@ import toRgb_aByObject from '../to/toRgb_aByObject';
  * @returns
  */
 export default function getRgbaVal(color: string): IObject {
-  const format = isValidator(color);
+  const format: any = isValidator(color);
   const lowerColor = color.toLowerCase();
-  if (['hex', 'hexa'].includes(format)) return toHex_aByObject(lowerColor);
-  if (['hsl', 'hsla'].includes(format)) return toHsl_aByObject(lowerColor);
-  if (['rgb', 'rgba'].includes(format)) return toRgb_aByObject(lowerColor);
+  if (['hex', 'hexa'].includes(format)) return { ...toHex_aByObject(lowerColor), format: format };
+  if (['hsl', 'hsla'].includes(format)) return { ...toHsl_aByObject(lowerColor), format: format };
+  if (['rgb', 'rgba'].includes(format)) return { ...toRgb_aByObject(lowerColor), format: format };
   // 关键字 hex格式
-  return toHex_aByObject(format);
+  return { ...toHex_aByObject(format), format: 'hex' };
 }

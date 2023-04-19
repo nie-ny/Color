@@ -6,4 +6,5 @@ export interface IObject {
   green: number;
   blue: number;
   alpha: number;
+  format?: 'hex' | 'hexa' | 'hsl' | 'hsla' | 'rgb' | 'rgba';
 }
