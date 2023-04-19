@@ -1,3 +1,4 @@
+import hslToRgb from './hslToRgb';
 import type { IObject } from '../types/index';
 
 /**
@@ -18,7 +19,7 @@ export default function toHsl_aByObject(color: string = ''): IObject {
   if (s === 0) {
     r = g = b = ~(l * 255);
   } else {
-    const tem: Array<number> = hslToRgb2(h, s / 100, l / 100);
+    const tem: Array<number> = hslToRgb(h, s, l);
     r = tem[0];
     g = tem[1];
     b = tem[2];
@@ -42,7 +43,7 @@ export default function toHsl_aByObject(color: string = ''): IObject {
  * @param l 亮度 [0~1]
  * @returns
  */
-function hslToRgb(h: number, s: number, l: number) {
+function hslToRgb2(h: number, s: number, l: number) {
   let r, g, b;
 
   if (s == 0) {
@@ -65,37 +66,3 @@ function hue2rgb(p: number, q: number, t: number) {
   if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
   return p;
 }
-
-/**
- * hsl 转换 rgb
- * @param h 色相 [0~360]
- * @param s 饱和度 [0~1]
- * @param l 亮度 [0~1]
- * @returns
- */
-const hslToRgb2 = (h: number, s: number, l: number): Array<number> => {
-  const C = (1 - Math.abs(2 * l - 1)) * s;
-  const hPrime = h / 60;
-  const X = C * (1 - Math.abs((hPrime % 2) - 1));
-  const m = l - C / 2;
-  const withLight = (r: number, g: number, b: number): Array<number> => [
-    (r + m) * 255,
-    (g + m) * 255,
-    (b + m) * 255
-  ];
-
-  if (hPrime <= 1) {
-    return withLight(C, X, 0);
-  } else if (hPrime <= 2) {
-    return withLight(X, C, 0);
-  } else if (hPrime <= 3) {
-    return withLight(0, C, X);
-  } else if (hPrime <= 4) {
-    return withLight(0, X, C);
-  } else if (hPrime <= 5) {
-    return withLight(X, 0, C);
-  } else if (hPrime <= 6) {
-    return withLight(C, 0, X);
-  }
-  return [0, 0, 0];
-};

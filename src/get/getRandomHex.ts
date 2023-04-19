@@ -2,7 +2,7 @@ const digits = '0123456789abcdef';
 const { floor, random } = Math;
 
 /**
- * 随机生成 hex 格式颜色
+ * 获取 随机生成 hex格式的颜色
  * @param format 类型
  */
 export default function getRandomHex(format?: 'hex' | 'hexa') {

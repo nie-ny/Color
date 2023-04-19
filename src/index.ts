@@ -6,7 +6,9 @@ import isHsl from './is/isHsl';
 import isHsla from './is/isHsla';
 import isColor from './is/isColor';
 import getColorByKeyword from './get/getColorByKeyword';
-import toRgb_aByObject from './to/toRgb_aByObject';
+import toRgb from './to/toRgb';
+import toHsl from './to/toHsl';
+import toHex from './to/toHex';
 
 export default {
   isHex,
@@ -17,5 +19,7 @@ export default {
   isHsla,
   isColor,
   getColorByKeyword,
-  toRgb_aByObject
+  toRgb,
+  toHsl,
+  toHex
 };
