@@ -1,11 +1,11 @@
-import type { IObject } from '../types/index';
+import type { IRGBA } from '../types/index';
 
 /**
  * 将 rgb|rgba格式颜色字符串 转换 为具有每种颜色值的对象
  * @param color rgb格式 rgb(0,0,0)|rgb(1 1 1)  rgba格式 rgb(0,0,0,0.1)|rgb(1 1 1 0.5)
  * @returns
  */
-export default function toRgb_aByObject(color: string = ''): IObject {
+export default function toRgb_aByObject(color: string = ''): IRGBA {
   let arr: Array<number> = [];
   arr = color.match(/\d+/g)?.map(Number) || [];
   const [red = 0, green = 0, blue = 0] = arr;

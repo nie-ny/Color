@@ -1,12 +1,12 @@
 import hslToRgb from './hslToRgb';
-import type { IObject } from '../types/index';
+import type { IRGBA } from '../types/index';
 
 /**
  * 将 hsl|hsla格式颜色字符串 转换 为具有每种颜色值的对象
  * @param color hsl(0,10%,10%)|hsla(0,10%,10%,0.5)
  * @returns
  */
-export default function toHsl_aByObject(color: string = ''): IObject {
+export default function toHsl_aByObject(color: string = ''): IRGBA {
   let r = 0,
     g = 0,
     b = 0,

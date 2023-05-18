@@ -17,13 +17,14 @@ specifiers:
   rollup: ^3.20.2
   rollup-plugin-node-externals: ^5.1.2
   ts-node: ^10.9.1
+  tslib: ^2.5.0
   typescript: ^5.0.4
 
 devDependencies:
   '@rollup/plugin-commonjs': registry.npmmirror.com/@rollup/plugin-commonjs/24.0.1_rollup@3.20.2
   '@rollup/plugin-node-resolve': registry.npmmirror.com/@rollup/plugin-node-resolve/15.0.2_rollup@3.20.2
   '@rollup/plugin-strip': registry.npmmirror.com/@rollup/plugin-strip/3.0.2_rollup@3.20.2
-  '@rollup/plugin-typescript': registry.npmmirror.com/@rollup/plugin-typescript/11.1.0_4uaj55xah35he2rmgneoluguqy
+  '@rollup/plugin-typescript': registry.npmmirror.com/@rollup/plugin-typescript/11.1.0_jpc74fqec5hlzgx6hn7dbz4c2y
   '@types/mocha': registry.npmmirror.com/@types/mocha/10.0.1
   '@types/node': registry.npmmirror.com/@types/node/18.15.11
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.58.0_gjoxkwycl3ml7yxlw3iuo7gyna
@@ -36,6 +37,7 @@ devDependencies:
   rollup: registry.npmmirror.com/rollup/3.20.2
   rollup-plugin-node-externals: registry.npmmirror.com/rollup-plugin-node-externals/5.1.2_rollup@3.20.2
   ts-node: registry.npmmirror.com/ts-node/10.9.1_bhanhq442dy43ncydsavgi4jfi
+  tslib: registry.npmmirror.com/tslib/2.5.0
   typescript: registry.npmmirror.com/typescript/5.0.4
 
 packages:
@@ -230,7 +232,7 @@ packages:
       rollup: registry.npmmirror.com/rollup/3.20.2
     dev: true
 
-  registry.npmmirror.com/@rollup/plugin-typescript/11.1.0_4uaj55xah35he2rmgneoluguqy:
+  registry.npmmirror.com/@rollup/plugin-typescript/11.1.0_jpc74fqec5hlzgx6hn7dbz4c2y:
     resolution: {integrity: sha512-86flrfE+bSHB69znnTV6kVjkncs2LBMhcTCyxWgRxLyfXfQrxg4UwlAqENnjrrxnSNS/XKCDJCl8EkdFJVHOxw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-typescript/-/plugin-typescript-11.1.0.tgz}
     id: registry.npmmirror.com/@rollup/plugin-typescript/11.1.0
     name: '@rollup/plugin-typescript'
@@ -249,6 +251,7 @@ packages:
       '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/5.0.2_rollup@3.20.2
       resolve: registry.npmmirror.com/resolve/1.22.2
       rollup: registry.npmmirror.com/rollup/3.20.2
+      tslib: registry.npmmirror.com/tslib/2.5.0
       typescript: registry.npmmirror.com/typescript/5.0.4
     dev: true
 
@@ -2544,6 +2547,12 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-1.14.1.tgz}
     name: tslib
     version: 1.14.1
+    dev: true
+
+  registry.npmmirror.com/tslib/2.5.0:
+    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-2.5.0.tgz}
+    name: tslib
+    version: 2.5.0
     dev: true
 
   registry.npmmirror.com/tsutils/3.21.0_typescript@5.0.4:

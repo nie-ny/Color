@@ -1,11 +1,11 @@
-import type { IObject } from '../types/index';
+import type { IRGBA } from '../types/index';
 
 /**
  * 将 hex|hexa格式颜色字符串 转换 为具有每种颜色值的对象
  * @param color #000|#ffffff|#0001|#ffffff11
  * @returns
  */
-export default function toHex_aByObject(color: string = ''): IObject {
+export default function toHex_aByObject(color: string = ''): IRGBA {
   let alphaBol = false;
   let h = color.slice(color.startsWith('#') ? 1 : 0);
   if (h.length === 3 || h.length === 4)

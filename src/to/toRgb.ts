@@ -1,5 +1,5 @@
 import getRgbaVal from '../get/getRgbaVal';
-import type { IObject } from '../types/index';
+import type { IRGBA } from '../types/index';
 
 /**
  * 将颜色转换为 rgb|rgba 格式
@@ -9,8 +9,18 @@ import type { IObject } from '../types/index';
  * @returns
  */
 export default function toRgb(color: string, bol: boolean = false, opacity?: number): string {
-  const rgba: IObject = getRgbaVal(color);
+  const rgba: IRGBA = getRgbaVal(color);
+  return rgbaToRgb(rgba, bol, opacity);
+}
 
+/**
+ * 将 IRGBA 对象转换为 rgb格式字符串
+ * @param rgba
+ * @param bol 是否返回 rgba格式
+ * @param opacity
+ * @returns
+ */
+export function rgbaToRgb(rgba: IRGBA, bol: boolean = false, opacity?: number): string {
   if (!bol) return `rgb( ${rgba.red}, ${rgba.green}, ${rgba.blue})`;
   return `rgba( ${rgba.red}, ${rgba.green}, ${rgba.blue}, ${
     typeof opacity === 'number' ? opacity : rgba.alpha

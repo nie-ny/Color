@@ -5,6 +5,7 @@ import toHsl_aByObject from '../src/to/toHsl_aByObject';
 import toRgb from '../src/to/toRgb';
 import toHex from '../src/to/toHex';
 import toHsl from '../src/to/toHsl';
+import toDarken from '../src/to/toDarken';
 
 describe('toRgb_aByObject', function () {
   it(`toRgb_aByObject('rgb(1,1,1)')`, () => {
@@ -78,7 +79,7 @@ describe('toHsl_aByObject', function () {
     });
   });
 
-  it(`toHsl_aByObject('hsla( 360, 50%, 50%, 1)')`, () => {
+  it(`toHsl_aByObject('hsla(360, 50%, 50%, 1)')`, () => {
     assert.deepStrictEqual(toHsl_aByObject('hsla(360,50%,50%, 1)'), {
       red: 191,
       green: 63,
@@ -87,8 +88,8 @@ describe('toHsl_aByObject', function () {
     });
   });
 
-  it(`toHsl_aByObject('hsl( 200, 50%, 50%')`, () => {
-    assert.deepStrictEqual(toHsl_aByObject('hsl( 200, 50%, 50%)'), {
+  it(`toHsl_aByObject('hsl(200, 50%, 50%')`, () => {
+    assert.deepStrictEqual(toHsl_aByObject('hsl(200, 50%, 50%)'), {
       red: 63,
       green: 148,
       blue: 191,
@@ -99,25 +100,25 @@ describe('toHsl_aByObject', function () {
 
 describe('toRgb', function () {
   it(`toRgb('#70557C')`, () => {
-    assert.strictEqual(toRgb('#70557C'), 'rgb( 112, 85, 124)');
+    assert.strictEqual(toRgb('#70557C'), 'rgb(112, 85, 124)');
   });
   it(`toRgb('red', true)`, () => {
-    assert.strictEqual(toRgb('red', true), 'rgba( 255, 0, 0, 1)');
+    assert.strictEqual(toRgb('red', true), 'rgba(255, 0, 0, 1)');
   });
   it(`toRgb('hsl(228, 56%, 19%)', true, 0.5)`, () => {
-    assert.strictEqual(toRgb('hsl(228, 56%, 19%)', true, 0.5), 'rgba( 21, 32, 75, 0.5)');
+    assert.strictEqual(toRgb('hsl(228, 56%, 19%)', true, 0.5), 'rgba(21, 32, 75, 0.5)');
   });
   it(`toRgb('#70557C00', true)`, () => {
-    assert.strictEqual(toRgb('#70557C00', true), 'rgba( 112, 85, 124, 0)');
+    assert.strictEqual(toRgb('#70557C00', true), 'rgba(112, 85, 124, 0)');
   });
 });
 
 describe('toHex', function () {
-  it(`toHex('rgb( 112, 85, 124)')`, () => {
-    assert.strictEqual(toHex('rgb( 112, 85, 124)'), '#70557c');
+  it(`toHex('rgb(112, 85, 124)')`, () => {
+    assert.strictEqual(toHex('rgb(112, 85, 124)'), '#70557c');
   });
-  it(`toHex('rgba( 112, 85, 124, 0.5)')`, () => {
-    assert.strictEqual(toHex('rgba( 112, 85, 124, 0.5)', true), '#70557c7f');
+  it(`toHex('rgba(112, 85, 124, 0.5)')`, () => {
+    assert.strictEqual(toHex('rgba(112, 85, 124, 0.5)', true), '#70557c7f');
   });
   it(`toHex('red', true)`, () => {
     assert.strictEqual(toHex('red', true, 0), '#ff000000');
@@ -134,22 +135,31 @@ describe('toHex', function () {
 });
 
 describe('toHsl', function () {
-  it(`toHsl('rgb( 112, 85, 124)')`, () => {
-    assert.strictEqual(toHsl('rgb( 112, 85, 124)'), 'hsl( 282, 19%, 41%)');
+  it(`toHsl('rgb(112, 85, 124)')`, () => {
+    assert.strictEqual(toHsl('rgb(112, 85, 124)'), 'hsl(282, 19%, 41%)');
   });
-  it(`toHsl('rgba( 112, 85, 124, 0.5)')`, () => {
-    assert.strictEqual(toHsl('rgba( 112, 85, 124, 0.5)', true), 'hsla( 282, 19%, 41%, 0.5)');
+  it(`toHsl('rgba(112, 85, 124, 0.5)')`, () => {
+    assert.strictEqual(toHsl('rgba(112, 85, 124, 0.5)', true), 'hsla(282, 19%, 41%, 0.5)');
   });
   it(`toHsl('red', true)`, () => {
-    assert.strictEqual(toHsl('red', true), 'hsla( 0, 100%, 50%, 1)');
+    assert.strictEqual(toHsl('red', true), 'hsla(0, 100%, 50%, 1)');
   });
   it(`toHsl('red')`, () => {
-    assert.strictEqual(toHsl('red'), 'hsl( 0, 100%, 50%)');
+    assert.strictEqual(toHsl('red'), 'hsl(0, 100%, 50%)');
   });
   it(`toHsl('hsl(228, 56%, 19%)', true)`, () => {
-    assert.strictEqual(toHsl('hsl(228, 56%, 19%)', true, 0.5), 'hsla( 228, 56%, 19%, 0.5)');
+    assert.strictEqual(toHsl('hsl(228, 56%, 19%)', true, 0.5), 'hsla(228, 56%, 19%, 0.5)');
   });
   it(`toHsl('#ffaa22aa', true)`, () => {
-    assert.strictEqual(toHsl('#ffaa22aa', true), 'hsla( 37, 100%, 57%, 0.7)');
+    assert.strictEqual(toHsl('#ffaa22aa', true), 'hsla(37, 100%, 57%, 0.7)');
+  });
+});
+
+describe('toDarken', function () {
+  it(`toDarken('#FF0000', 20)`, () => {
+    assert.strictEqual(toDarken('#FF0000', 20), '#cc0000');
+  });
+  it(`toDarken('#FF0000', 20, 'rgba')`, () => {
+    assert.strictEqual(toDarken('#FF0000', 20, 'rgba'), 'rgba(204, 0, 0, 1)');
   });
 });
