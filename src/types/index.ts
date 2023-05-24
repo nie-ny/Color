@@ -1,3 +1,4 @@
+// 库 支持的类型
 export type IFormat = 'hex' | 'hexa' | 'hsl' | 'hsla' | 'rgb' | 'rgba';
 
 /**

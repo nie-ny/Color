@@ -23,6 +23,6 @@ export default function toHsl(color: string, bol: boolean = false, opacity?: num
  */
 export function rgbaToHsl(rgba: IRGBA, bol: boolean = false, opacity?: number): string {
   const [h, s, l] = rgbToHsl(rgba.red, rgba.green, rgba.blue);
-  if (!bol) return `hsl( ${h}, ${s}%, ${l}%)`;
-  return `hsla( ${h}, ${s}%, ${l}%, ${typeof opacity === 'number' ? opacity : rgba.alpha})`;
+  if (!bol) return `hsl(${h}, ${s}%, ${l}%)`;
+  return `hsla(${h}, ${s}%, ${l}%, ${typeof opacity === 'number' ? opacity : rgba.alpha})`;
 }

@@ -6,6 +6,7 @@ import toRgb from '../src/to/toRgb';
 import toHex from '../src/to/toHex';
 import toHsl from '../src/to/toHsl';
 import toDarken from '../src/to/toDarken';
+import toLighten from '../src/to/toLighten';
 
 describe('toRgb_aByObject', function () {
   it(`toRgb_aByObject('rgb(1,1,1)')`, () => {
@@ -161,5 +162,20 @@ describe('toDarken', function () {
   });
   it(`toDarken('#FF0000', 20, 'rgba')`, () => {
     assert.strictEqual(toDarken('#FF0000', 20, 'rgba'), 'rgba(204, 0, 0, 1)');
+  });
+  it(`toDarken('#FF0000', 90, 'hsl')`, () => {
+    assert.strictEqual(toDarken('#FF0000', 90, 'hsl'), 'hsl(0, 100%, 5%)');
+  });
+});
+
+describe('toLighten', function () {
+  it(`toLighten('rgb(255,0,0)', 20)`, () => {
+    assert.strictEqual(toLighten('rgb(255,0,0)', 20), 'rgb(255, 51, 51)');
+  });
+  it(`toLighten('#FF0000', 20, 'rgba')`, () => {
+    assert.strictEqual(toLighten('#FF0000', 20, 'rgba'), 'rgba(255, 51, 51, 1)');
+  });
+  it(`toLighten('#cc00cc', 90, 'hsl')`, () => {
+    assert.strictEqual(toLighten('#cc00cc', 90, 'hsl'), 'hsl(300, 100%, 95%)');
   });
 });

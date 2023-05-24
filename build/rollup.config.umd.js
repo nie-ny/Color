@@ -14,7 +14,7 @@ export default {
   input: 'src/index.ts',
   output: {
     file: './umd/color.umd.js',
-    name: 'color',
+    name: 'Color',
     format: 'umd'
   },
   plugins: [

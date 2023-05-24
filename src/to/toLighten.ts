@@ -5,22 +5,22 @@ import { rgbaToRgb } from './toRgb';
 import type { IRGBA, IFormat } from '../types/index';
 
 /**
- * 颜色加深
+ * 颜色变更亮
  * @param color 插件支持的颜色格式 hsl|rgb...
- * @param percent 深度 百分比（1-100）
+ * @param percent 亮度 百分比（1-100）
  * @param format 颜色返回格式
  * @returns
  */
-export default function toDarken(color: string, percent: number, format?: IFormat) {
+export default function toLighten(color: string, percent: number, format?: IFormat) {
   if (percent < 0) percent = 0;
   if (percent > 100) percent = 100;
   const rgba: IRGBA = getRgbaVal(color);
-  rgba.red = Math.round(rgba.red - 2.55 * percent);
-  rgba.green = Math.round(rgba.green - 2.55 * percent);
-  rgba.blue = Math.round(rgba.blue - 2.55 * percent);
-  rgba.red = rgba.red < 0 ? 0 : rgba.red;
-  rgba.green = rgba.green < 0 ? 0 : rgba.green;
-  rgba.blue = rgba.blue < 0 ? 0 : rgba.blue;
+  rgba.red = Math.round(rgba.red + 2.55 * percent);
+  rgba.green = Math.round(rgba.green + 2.55 * percent);
+  rgba.blue = Math.round(rgba.blue + 2.55 * percent);
+  rgba.red = rgba.red > 255 ? 255 : rgba.red;
+  rgba.green = rgba.green > 255 ? 255 : rgba.green;
+  rgba.blue = rgba.blue > 255 ? 255 : rgba.blue;
 
   // 自定义样式
   if (format === 'hex') return rgbaToHex(rgba, false);

@@ -21,8 +21,8 @@ export default function toRgb(color: string, bol: boolean = false, opacity?: num
  * @returns
  */
 export function rgbaToRgb(rgba: IRGBA, bol: boolean = false, opacity?: number): string {
-  if (!bol) return `rgb( ${rgba.red}, ${rgba.green}, ${rgba.blue})`;
-  return `rgba( ${rgba.red}, ${rgba.green}, ${rgba.blue}, ${
+  if (!bol) return `rgb(${rgba.red}, ${rgba.green}, ${rgba.blue})`;
+  return `rgba(${rgba.red}, ${rgba.green}, ${rgba.blue}, ${
     typeof opacity === 'number' ? opacity : rgba.alpha
   })`;
 }
