@@ -1,5 +1,4 @@
 const digits = '0123456789abcdef';
-const { floor, random } = Math;
 
 /**
  * 获取 随机生成 hex格式的颜色

@@ -11,7 +11,7 @@ import type { IRGBA, IFormat } from '../types/index';
  * @param format 颜色返回格式
  * @returns
  */
-export default function toDarken(color: string, percent: number, format?: IFormat) {
+export default function toDarken(color: string, percent: number, format?: IFormat): string {
   if (percent < 0) percent = 0;
   if (percent > 100) percent = 100;
   const rgba: IRGBA = getRgbaVal(color);
@@ -36,4 +36,6 @@ export default function toDarken(color: string, percent: number, format?: IForma
   if (rgba.format === 'hsla') return rgbaToHsl(rgba, true);
   if (rgba.format === 'rgb') return rgbaToRgb(rgba, false);
   if (rgba.format === 'rgba') return rgbaToRgb(rgba, true);
+
+  return '';
 }
