@@ -23,7 +23,14 @@
     "type": "git",
     "url": "git+https://github.com/nie-ny/Color.git"
   },
-  "keywords": [],
+  "keywords": [
+    "color",
+    "hex",
+    "rgb",
+    "rgba",
+    "darken",
+    "lighten"
+  ],
   "bugs": {
     "url": "https://github.com/nie-ny/Color/issues"
   },

@@ -16,7 +16,7 @@ import toHex from './to/toHex';
 import toDarken from './to/toDarken';
 import toLighten from './to/toLighten';
 
-export default {
+export {
   isHex,
   isHexa,
   isRgb,
