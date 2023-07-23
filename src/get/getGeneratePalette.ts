@@ -11,7 +11,7 @@ import type { IRGBA, IFormat } from '../types/index';
  * @param steps 色阶数
  * @returns 颜色数组
  */
-export default function generateColorPalette(
+export default function getGeneratePalette(
   startColor: string,
   endColor: string,
   steps: number = 10,

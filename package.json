@@ -1,7 +1,9 @@
 {
-  "name": "@nie-ny/color",
+  "name": "color",
   "version": "0.0.1",
   "description": "颜色扩展插件",
+  "author": "nie-ny",
+  "license": "MIT",
   "main": "cjs/index.js",
   "unpkg": "umd/color.umd.js",
   "module": "es/index.js",
@@ -22,8 +24,6 @@
     "url": "git+https://github.com/nie-ny/Color.git"
   },
   "keywords": [],
-  "author": "nie-ny",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/nie-ny/Color/issues"
   },
@@ -47,5 +47,10 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
     "tslib": "^2.5.0"
-  }
+  },
+  "files": [
+    "es",
+    "cjs",
+    "umd"
+  ]
 }
